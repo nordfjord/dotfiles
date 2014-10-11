@@ -1,22 +1,33 @@
 {
+	"bold_folder_labels": true,
 	"color_scheme": "Packages/Monokai Extended/Monokai Extended.tmTheme",
-	"theme": "Soda Dark.sublime-theme",
+	"default_line_ending": "unix",
+	"draw_white_space": "all",
+	"ensure_newline_at_eof_on_save": true,
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		".sass-cache"
+	],
 	"font_face": "inconsolata",
 	"font_size": 14,
-	"rulers": [80],
-	"tab_size": 2,
-	"word_wrap": true,
-	"wrap_width": 80,
-	"draw_white_space": "all",
-	"trim_trailing_white_space_on_save": true,
-	"ensure_newline_at_eof_on_save": true,
-	"save_on_focus_lost": true,
-	"default_line_ending": "unix",
-	"bold_folder_labels": true,
-	"show_encoding": true,
-	"show_line_endings": true,
-	"folder_exclude_patterns": [".svn", ".git", ".hg", "CVS", ".sass-cache"],
 	"ignored_packages":
 	[
-	]
+		"Markdown"
+	],
+	"rulers":
+	[
+		80
+	],
+	"save_on_focus_lost": true,
+	"show_encoding": true,
+	"show_line_endings": true,
+	"tab_size": 2,
+	"theme": "Soda Dark.sublime-theme",
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": true,
+	"wrap_width": 80
 }
