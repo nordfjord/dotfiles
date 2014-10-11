@@ -1,0 +1,23 @@
+[
+
+	{ "keys": ["super+shift+up"], "command": "select_lines", "args": {"forward": false} },
+	{ "keys": ["super+shift+down"], "command": "select_lines", "args": {"forward": true} },
+
+	{ "keys": ["ctrl+tab"], "command": "next_view" },
+	{ "keys": ["ctrl+shift+tab"], "command": "prev_view" },
+
+	{ "keys": ["ctrl+a"], "command": "select_all" },
+	{ "keys": ["ctrl+shift+l"], "command": "split_selection_into_lines" },
+
+
+	{ "keys": ["ctrl+d"], "command": "find_under_expand" },
+	{ "keys": ["ctrl+k", "ctrl+d"], "command": "find_under_expand_skip" },
+	{ "keys": ["ctrl+shift+space"], "command": "expand_selection", "args": {"to": "scope"} },
+	{ "keys": ["ctrl+shift+m"], "command": "expand_selection", "args": {"to": "brackets"} },
+	{ "keys": ["ctrl+m"], "command": "move_to", "args": {"to": "brackets"} },
+	{ "keys": ["ctrl+shift+j"], "command": "expand_selection", "args": {"to": "indentation"} },
+	{ "keys": ["ctrl+shift+a"], "command": "expand_selection", "args": {"to": "tag"} },
+
+	{ "keys": ["ctrl+0"], "command": "show_panel", "args": {"panel": "console", "toggle": true} }
+
+]
