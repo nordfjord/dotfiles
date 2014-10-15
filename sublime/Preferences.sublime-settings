@@ -1,9 +1,12 @@
 {
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Theme - Glacier/glacier.tmTheme",
 	"default_line_ending": "unix",
+	"color_scheme": "Packages/Theme - Brogrammer/brogrammer.tmTheme",
+	"detect_indentation": true,
 	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
+	"font_face": "inconsolata",
+	"font_size": 14,
 	"folder_exclude_patterns":
 	[
 		".svn",
@@ -12,22 +15,20 @@
 		"CVS",
 		".sass-cache"
 	],
-	"font_face": "inconsolata",
-	"font_size": 14,
 	"ignored_packages":
 	[
-		"Markdown"
+		"LiveReload",
+		"SublimeLinter"
 	],
+	"theme": "Brogrammer.sublime-theme",
 	"rulers":
 	[
-		80
+		"Lorde"
 	],
 	"save_on_focus_lost": true,
 	"show_encoding": true,
 	"show_line_endings": true,
 	"tab_size": 2,
-	"theme": "Glacier.sublime-theme",
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": true,
-	"wrap_width": 80
 }
