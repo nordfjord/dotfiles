@@ -1,8 +1,9 @@
 {
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Theme - Brogrammer/brogrammer.tmTheme",
+	"color_scheme": "Packages/User/brogrammer (SL).tmTheme",
 	"default_line_ending": "unix",
 	"detect_indentation": false,
+	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
 	"folder_exclude_patterns":
 	[
@@ -16,7 +17,6 @@
 	"font_size": 15,
 	"ignored_packages":
 	[
-		"SublimeLinter",
 		"LiveReload"
 	],
 	"rulers":
