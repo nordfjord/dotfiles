@@ -2,7 +2,7 @@
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/User/brogrammer (SL).tmTheme",
 	"default_line_ending": "unix",
-	"detect_indentation": false,
+	"detect_indentation": true,
 	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
 	"folder_exclude_patterns":
@@ -26,8 +26,9 @@
 	"save_on_focus_lost": true,
 	"show_encoding": true,
 	"show_line_endings": true,
-	"tab_size": 2,
+	"tab_size": 4,
 	"theme": "Brogrammer.sublime-theme",
+	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": true
 }

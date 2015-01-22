@@ -76,4 +76,7 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ll="ls -lF"
+alias ll="ls -lhF"
+alias ccat="pygmentize -g"
+
+export PATH="$PATH:$HOME/npm/bin"
