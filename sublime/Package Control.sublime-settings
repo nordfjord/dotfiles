@@ -1,0 +1,45 @@
+{
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"All Autocomplete",
+		"AngularJS",
+		"AngularJS (CoffeeScript)",
+		"AngularJS Snippets",
+		"Better CoffeeScript",
+		"Bootstrap 3 Snippets",
+		"ColorPicker",
+		"Django Manage Commands",
+		"DocBlockr",
+		"EditorConfig",
+		"Emmet",
+		"Git",
+		"GitGutter",
+		"HTML-CSS-JS Prettify",
+		"HTMLBeautify",
+		"Javascript Beautify",
+		"JSHint Gutter",
+		"LESS",
+		"LiveReload",
+		"LoremIpsum",
+		"Markdown Preview",
+		"Minifier",
+		"ngdoc snippets",
+		"Package Control",
+		"Python Auto-Complete",
+		"Require CommonJS Modules Helper",
+		"Sass",
+		"SCSS",
+		"SideBarEnhancements",
+		"Stylus",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"Theme - Soda",
+		"TodoReview",
+		"Tomorrow Color Schemes",
+		"UMD snippets",
+		"Zip Browser"
+	]
+}
