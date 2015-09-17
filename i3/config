@@ -9,7 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-exec feh --bg-fill /home/echo/Pictures/Wallpaper/ElizaDushku.jpg
+exec feh --bg-fill /home/echo/Pictures/Wallpaper/watermap.jpg
 exec dropbox start
 exec xautolock -time 5 -locker '~/.i3/screenlock.sh' &
 exec setxkbmap is

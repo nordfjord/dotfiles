@@ -1,6 +1,9 @@
 {
 	"in_process_packages":
 	[
+		"HTML-CSS-JS Prettify",
+		"Javascript Beautify",
+		"SublimeLinter"
 	],
 	"installed_packages":
 	[

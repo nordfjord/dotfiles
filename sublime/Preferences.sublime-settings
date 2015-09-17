@@ -14,9 +14,12 @@
 		".sass-cache"
 	],
 	"font_face": "inconsolata",
-	"font_size": 19,
+	"font_size": 20,
 	"ignored_packages":
 	[
+		"Javascript Beautify",
+		"HTML-CSS-JS Prettify",
+		"SublimeLinter",
 		"LiveReload"
 	],
 	"rulers":
