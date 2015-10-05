@@ -80,3 +80,4 @@ alias ll="ls -lhF"
 alias ccat="pygmentize -g"
 
 export PATH="$PATH:$HOME/npm/bin"
+export PATH="$PATH:./node_modules/.bin"
