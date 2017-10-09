@@ -45,7 +45,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sublime node npm bower web-search zsh-syntax-highlighting)
+plugins=(z git sublime node npm bower web-search zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -78,6 +78,11 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ll="ls -lhF"
 alias ccat="pygmentize -g"
-
+alias gulp="nocorrect gulp "
+alias export-docker=eval "${docker-machine env dev}"
 export PATH="$PATH:$HOME/npm/bin"
 export PATH="$PATH:./node_modules/.bin"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
