@@ -55,7 +55,7 @@ export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -79,6 +79,7 @@ fi
 alias ll="ls -lhF"
 alias ccat="pygmentize -g"
 alias gulp="nocorrect gulp "
+alias grbm="git rebase origin/master"
 alias export-docker=eval "${docker-machine env dev}"
 export PATH="$PATH:$HOME/npm/bin"
 export PATH="$PATH:./node_modules/.bin"
