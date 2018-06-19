@@ -54,7 +54,7 @@ values."
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom
-            shell-default-term-shell "/usr/local/bin/zsh")
+            shell-default-term-shell "/usr/sbin/zsh")
      ;; spell-checking
      syntax-checking
      version-control
@@ -152,7 +152,7 @@ values."
                                :size 15
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
