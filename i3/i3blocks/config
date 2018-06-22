@@ -1,0 +1,77 @@
+separator_block_width=28
+
+# Black:          #1E2127       
+# Bright Black:   #5C6370        
+# Red:            #E06C75       
+# Bright Red:     #E06C75        
+# Green:          #98C379       
+# Bright Green:   #98C379       
+# Yellow:         #D19A66
+# Bright Yellow:  #D19A66
+# Blue:           #61AFEF
+# Light Blue:     #61AFEF
+# Magenta:        #C678DD
+# Light Magenta:  #C678DD
+# Cyan:           #56B6C2
+# Light Cyan:     #56B6C2
+# White:          #ABB2BF
+# Bright White:   #FFFFFF
+# Text:           #ABB2BF
+# Bold Text:      #ABB2BF
+# Selection:      #3A3F4B
+# Cursor:         #5C6370
+# Background:     #1E2127  
+
+[disk-root]
+label=
+command=/usr/lib/i3blocks/disk /
+interval=30
+color=#61AFEF
+
+[ssid]
+command=~/.i3/ssid
+color=#ABB2BF
+interval=5
+
+[wireless]
+instance=wlp4s0
+command=/usr/lib/i3blocks/iface
+color=#98C379
+interval=10
+
+[volume]
+command=~/.i3/volume
+label=VOL
+instance=Master
+color=#C678DD
+signal=10
+interval=5
+
+[temp]
+label=
+command=/usr/lib/i3blocks/temperature
+interval=10
+color=#D19A66
+
+[battery]
+command=~/.i3/battery
+interval=30
+
+[cpu_usage]
+command=~/.i3/cpu_usage
+label=
+interval=10
+color=#ABB2BF
+
+[memory]
+command=~/.i3/memory
+label=
+interval=10
+color=#ABB2BF
+
+
+[time]
+label=
+command=date '+%a %-e %B %Y %-l:%M %p'
+interval=5
+color=#56B6C2
