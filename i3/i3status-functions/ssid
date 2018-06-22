@@ -1,0 +1,72 @@
+#!/usr/bin/perl
+#
+# Copyright 2014 Pierre Mavro <deimos@deimos.fr>
+# Copyright 2014 Vivien Didelot <vivien@didelot.org>
+#
+# Licensed under the terms of the GNU GPL v3, or any later version.
+#
+# This script is meant to use with i3blocks. It parses the output of the "acpi"
+# command (often provided by a package of the same name) to read the status of
+# the battery, and eventually its remaining time (to full charge or discharge).
+#
+# The color will gradually change for a percentage below 85%, and the urgency
+# (exit code 33) is set if there is less that 5% remaining.
+
+use strict;
+use warnings;
+use utf8;
+
+my $dbm;
+my $ssid;
+my $quality;
+my $icon;
+my $full_text;
+my $short_text;
+
+# read the first line of the "ssid" command output
+open (SSID, "iw dev wlp4s0 link | grep SSID | cut -d ' ' -f 2- |");
+open (DBM, "iw dev wlp4s0 link | grep 'dBm\$' | grep -Eoe '-[0-9]{2}' |") or die;
+
+$dbm = <DBM>;
+$ssid = <SSID>;
+close(SSID);
+close(DBM);
+
+$full_text = "";
+if ($dbm <= -100) {
+	$quality = 0;
+} elsif ($dbm >= -50) {
+	$quality = 100;
+} else {
+	$quality = 2 * ($dbm + 100);
+}
+
+if ($quality == 100) {
+	$icon = "";
+} elsif ($quality >= 66) {
+	$icon = "";
+} elsif ($quality >= 33) {
+	$icon = "";
+} else { # quality > 0
+	$icon = "";
+}
+
+$full_text = "$icon $ssid";
+$short_text = $full_text;
+
+print "$full_text\n";
+print "$short_text\n";
+
+if ($quality < 20) {
+	print "#E06C75\n";
+} elsif ($quality < 40) {
+	print "#D19A66\n";
+} elsif ($quality < 60) {
+	print "#D19A66\n";
+} elsif ($quality < 85) {
+	print "#98C379\n";
+} else {
+	print "#98C379\n"
+}
+
+exit(0);
