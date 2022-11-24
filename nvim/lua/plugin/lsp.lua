@@ -28,7 +28,7 @@ local on_attach = function(client, bufnr)
 end
 
 local capabilities = require('cmp_nvim_lsp')
-  .update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  .default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local setup = function(server, conf)
   local config = {
@@ -48,9 +48,7 @@ local lsp = require('lspconfig')
 
 setup(lsp.tsserver)
 setup(lsp.ocamllsp)
-
-
-vim.g['fsharp#fsautocomplete_command'] = {"/Users/nordfjord/.dotnet/tools/fsautocomplete", "--background-service-enabled" }
+vim.g['fsharp#fsautocomplete_command'] = { "/Users/nordfjord/.dotnet/tools/fsautocomplete", "--adaptive-lsp-server-enabled", "--project-graph-enabled" }
 vim.g['fsharp#lsp_auto_setup'] = false
 vim.g['fsharp#show_signature_on_cursor_move'] = true 
 vim.cmd [[
@@ -63,13 +61,6 @@ vim.cmd [[
   endif
 ]]
 setup(require('ionide'))
-
-local rescript_server_path = vim.fn.stdpath('data')..'/site/pack/packer/start/vim-rescript/server/out/server.js'
-
-setup(lsp.rescriptls, {
-  cmd = {'node', rescript_server_path, '--stdio'}
-})
-
 
 -- Recommended: this makes the hover windows unfocusable.
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(

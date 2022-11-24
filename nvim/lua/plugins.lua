@@ -5,10 +5,9 @@ return require('packer').startup(function(use)
   use { 'numToStr/Comment.nvim',
         config = function () require('plugin.comment') end }
   use 'tpope/vim-fugitive'
-  use  'tpope/vim-surround'
+  use 'tpope/vim-surround'
   use 'airblade/vim-rooter'
-  use { 'navarasu/onedark.nvim',
-        config = function () require('plugin.onedark') end }
+  use { 'nordfjord/onehalf', rtp = 'vim/', config = function() vim.cmd("colorscheme onehalfdark") end}
   use 'justinmk/vim-sneak'
   use 'ryanoasis/vim-devicons'
   use { 'vim-test/vim-test',
@@ -43,7 +42,6 @@ return require('packer').startup(function(use)
   }
 
   use 'ionide/Ionide-vim'
-  use 'rescript-lang/vim-rescript'
   use 'elixir-editors/vim-elixir'
   use 'nkrkv/nvim-treesitter-rescript'
   use { 'nvim-treesitter/nvim-treesitter',
