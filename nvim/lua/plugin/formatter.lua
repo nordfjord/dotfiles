@@ -1,34 +1,23 @@
 local formatter = require('formatter')
+local util = require('formatter.util')
 
-local prettier = function()
-  return {
-    exe = "prettier",
-    args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))},
-    stdin = true
-  }
-end
+local mix = require('formatter.defaults.mixformat')
+local prettier = require('formatter.defaults.prettier')
 
-local mix = function()
-  return {
-    exe = "mix",
-    args = {"format", "-"},
-    stdin = true
-  }
-end
-
-
-formatter.setup {
+formatter.setup({
   filetype = {
-    javascript = { prettier },
-    typescript = { prettier },
-    typescriptreact = { prettier },
-    html = { prettier },
-    vue = { prettier },
-    json = { prettier },
-    elixir = { mix }
-  }
-}
+    lua = { require('formatter.filetypes.lua').stylua },
+    javascript = { prettier('typescript') },
+    typescript = { prettier('typescript') },
+    markdown = { prettier('markdown') },
+    typescriptreact = { prettier('typescript') },
+    html = { prettier('html') },
+    vue = { prettier('vue') },
+    json = { prettier('json') },
+    elixir = { mix },
+  },
+})
 
 local map = vim.api.nvim_set_keymap
 
-map('n', '<leader>f', ':Format<cr>', {noremap = true, silent = true})
+map('n', '<leader>f', ':Format<cr>', { noremap = true, silent = true })

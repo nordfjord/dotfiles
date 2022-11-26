@@ -5,6 +5,6 @@ vim.g['NERDTreeStatusline'] = ''
 
 local map = vim.api.nvim_set_keymap
 
-local opts = {noremap = true}
+local opts = { noremap = true }
 map('n', '<leader>op', ':NERDTree<cr>', opts)
 map('n', '<leader>oP', ':NERDTreeFind<cr>', opts)

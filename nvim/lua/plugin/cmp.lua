@@ -1,7 +1,7 @@
 -- Setup nvim-cmp.
-local cmp = require'cmp'
+local cmp = require('cmp')
 
-vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
 cmp.setup({
   snippet = {
@@ -20,8 +20,8 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'snippy' }, -- For snippy users.
-    { name = 'buffer', keyword_length = 5, max_item_count = 10 }
-  })
+    { name = 'buffer', keyword_length = 5, max_item_count = 10 },
+  }),
 })
 
 -- Set configuration for specific filetype.
@@ -29,15 +29,15 @@ cmp.setup.filetype('gitcommit', {
   sources = cmp.config.sources({
     { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
     { name = 'buffer' },
-  })
+  }),
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline('/', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
-    { name = 'buffer' }
-  }
+    { name = 'buffer' },
+  },
 })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
@@ -45,6 +45,6 @@ cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
     { name = 'path' },
-    { name = 'cmdline' }
-  })
+    { name = 'cmdline' },
+  }),
 })
