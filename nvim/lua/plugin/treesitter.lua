@@ -1,8 +1,7 @@
 require('nvim-treesitter.configs').setup({
-  ensure_installed = 'all',
+  ensure_installed = { 'lua', 'ocaml', 'markdown', 'python', 'toml', 'yaml', 'vim' },
   highlight = {
     enable = true,
-    disable = { "typescript" },
   },
   indent = {
     enable = true,

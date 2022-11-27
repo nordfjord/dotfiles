@@ -10,6 +10,7 @@ formatter.setup({
     javascript = { prettier('typescript') },
     typescript = { prettier('typescript') },
     markdown = { prettier('markdown') },
+    yaml = { prettier('yaml') },
     typescriptreact = { prettier('typescript') },
     html = { prettier('html') },
     vue = { prettier('vue') },

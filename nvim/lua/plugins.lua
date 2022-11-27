@@ -4,17 +4,17 @@ return require('packer').startup(function(use)
 
   use('tpope/vim-fugitive')
   use('tpope/vim-surround')
-  use('christianchiarulli/nvcode-color-schemes.vim')
-  use({
-    'nordfjord/onehalf',
-    rtp = 'vim/',
-    config = function()
-      require('config.colorscheme')
-    end,
-  })
   use('justinmk/vim-sneak')
 
   use('kyazdani42/nvim-web-devicons')
+  -- use('chriskempson/base16-vim')
+  -- use({
+  --  'nordfjord/onehalf',
+  --  rtp = 'vim/',
+  --  config = function()
+  --    require('config.colorscheme')
+  --  end,
+  -- })
   use({
     'nordfjord/vim-test',
     config = function()
@@ -35,6 +35,7 @@ return require('packer').startup(function(use)
       require('plugin.snippy')
     end,
   })
+
   -- Completion backend
   use({
     'hrsh7th/nvim-cmp',
@@ -65,21 +66,19 @@ return require('packer').startup(function(use)
   })
 
   use('ionide/Ionide-vim')
-  use('elixir-editors/vim-elixir')
-  use({
-    'nvim-treesitter/nvim-treesitter',
-    -- Treesitter deprecated older symbols and most colorschemes haven't updated
-    -- commit = '4cccb6f494eb255b32a290d37c35ca12584c74d0',
-    run = ':TSUpdate',
-    config = function()
-      require('plugin.treesitter')
-    end,
-  })
 
   use({
     'mhartington/formatter.nvim',
     config = function()
       require('plugin.formatter')
+    end,
+  })
+
+  use({
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    config = function()
+      require('plugin.treesitter')
     end,
   })
 
