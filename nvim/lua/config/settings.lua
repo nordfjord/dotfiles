@@ -38,7 +38,6 @@ opt.iskeyword = opt.iskeyword - '_'
 
 opt.signcolumn = 'yes'
 opt.list = true
-opt.cmdheight = 0
 opt.listchars = { tab = '▸ ', trail = '·' }
 opt.backup = false
 opt.swapfile = false

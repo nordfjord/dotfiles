@@ -1,4 +1,5 @@
 vim.cmd([[packadd packer.nvim]])
+
 return require('packer').startup(function(use)
   use('wbthomason/packer.nvim')
 
@@ -84,10 +85,17 @@ return require('packer').startup(function(use)
     end,
   })
 
+  vim.g['neo_tree_remove_legacy_commands'] = true
   use({
-    'preservim/nerdtree',
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v2.x',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+      'MunifTanjim/nui.nvim',
+    },
     config = function()
-      require('plugin.nerdtree')
+      require('plugin.neotree')
     end,
   })
 end)

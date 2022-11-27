@@ -21,10 +21,27 @@ local function get_icon(name, extension)
   return require('nvim-web-devicons').get_icon(name, extension, {})
 end
 
+local blacklist = {
+  'help',
+  'neo-tree',
+  'fugitive',
+  'gitcommit',
+  'Trouble',
+  'dashboard',
+  'toggleterm',
+  'git',
+  'qf',
+  'packer',
+  '',
+}
+
 local function construct_winbar()
   -- Right aligned
   local winbar = { '%=', '%#WinBarGroup#' }
   local bufnr = vim.api.nvim_get_current_buf()
+  if vim.tbl_contains(blacklist, vim.bo.filetype) then
+    return nil
+  end
   local path = buffer.path(bufnr)
   local basename = buffer.tail(bufnr)
   local ext = buffer.ext(bufnr)
@@ -46,7 +63,10 @@ local function render_winbar()
     return nil
   end
 
-  return construct_winbar()
+  local winbar = construct_winbar()
+  if winbar ~= nil then
+    vim.opt_local.winbar = winbar
+  end
 end
 
 vim.api.nvim_create_autocmd({
@@ -57,6 +77,6 @@ vim.api.nvim_create_autocmd({
 }, {
   group = vim.api.nvim_create_augroup('WinBarGroup', {}),
   callback = function()
-    vim.opt_local.winbar = render_winbar()
+    render_winbar()
   end,
 })
