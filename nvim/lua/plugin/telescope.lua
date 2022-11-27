@@ -2,15 +2,13 @@ local actions = require('telescope.actions')
 
 require('telescope').setup({
   defaults = {
-    file_ignore_patterns = { 'node_modules', '.git' },
     mappings = {
       i = {
-        --        ['<esc>'] = actions.close,
         ['<C-j>'] = actions.move_selection_next,
         ['<C-k>'] = actions.move_selection_previous,
+        ['<C-h>'] = actions.which_key,
       },
       n = {
-        -- ['<esc>'] = actions.close,
         ['<C-j>'] = actions.move_selection_next,
         ['<C-k>'] = actions.move_selection_previous,
       },
@@ -18,8 +16,10 @@ require('telescope').setup({
   },
 })
 
+
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('file_browser')
+
 
 local map = vim.api.nvim_set_keymap
 

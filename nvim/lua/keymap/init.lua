@@ -6,4 +6,10 @@ vim.g.mapleader = ' '
 map('v', '<', '<gv', { noremap = true })
 map('v', '>', '>gv', { noremap = true })
 
+-- open the file under the cursor
+map('n', 'gf', ':edit <cfile><cr>', {noremap = true})
+-- source current lua file
+map('n', '<leader>lf', ':luafile %<cr>', { noremap = true })
+
 require('keymap.splits')
+

@@ -7,14 +7,16 @@ return require('packer').startup(function(use)
   use('justinmk/vim-sneak')
 
   use('kyazdani42/nvim-web-devicons')
-  -- use('chriskempson/base16-vim')
-  -- use({
-  --  'nordfjord/onehalf',
-  --  rtp = 'vim/',
-  --  config = function()
-  --    require('config.colorscheme')
-  --  end,
-  -- })
+
+  use({
+    'numToStr/Comment.nvim',
+    config = function()
+      require('plugin.comment')
+    end,
+  })
+
+  use({ 'nordfjord/onehalf', rtp = 'vim/' })
+
   use({
     'nordfjord/vim-test',
     config = function()

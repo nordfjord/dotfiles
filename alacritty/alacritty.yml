@@ -107,6 +107,8 @@ font:
   normal: 
     family: JetBrainsMono Nerd Font
     style: Light 
+    # family: Victor Mono
+    # style: Regular
 
   # Bold font face
   bold:
