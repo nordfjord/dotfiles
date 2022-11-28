@@ -9,13 +9,6 @@ return require('packer').startup(function(use)
 
   use('kyazdani42/nvim-web-devicons')
 
-  use({
-    'numToStr/Comment.nvim',
-    config = function()
-      require('plugin.comment')
-    end,
-  })
-
   use({ 'nordfjord/onehalf', rtp = 'vim/' })
 
   use({
