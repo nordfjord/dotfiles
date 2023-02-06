@@ -3,6 +3,7 @@ local util = require('formatter.util')
 
 local mix = require('formatter.defaults.mixformat')
 local prettier = require('formatter.defaults.prettier')
+local ocamlfmt = require('formatter.defaults.ocamlformat')
 
 formatter.setup({
   filetype = {
@@ -15,6 +16,8 @@ formatter.setup({
     html = { prettier('html') },
     vue = { prettier('vue') },
     json = { prettier('json') },
+    svelte = { prettier('svelte') },
+    ocaml = { ocamlfmt },
     elixir = { mix },
   },
 })

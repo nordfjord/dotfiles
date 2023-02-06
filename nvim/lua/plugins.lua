@@ -78,6 +78,8 @@ return require('packer').startup(function(use)
     end,
   })
 
+  use('rescript-lang/vim-rescript')
+
   vim.g['neo_tree_remove_legacy_commands'] = true
   use({
     'nvim-neo-tree/neo-tree.nvim',
