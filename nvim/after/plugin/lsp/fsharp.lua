@@ -1,5 +1,4 @@
-local lsp = require('lspconfig')
-local setup = require('plugin.lsp.setup')
+local setup = require('lsp-setup')
 
 vim.g['fsharp#fsautocomplete_command'] =
   { '/Users/nordfjord/.dotnet/tools/fsautocomplete', '--adaptive-lsp-server-enabled', '--project-graph-enabled' }

@@ -6,31 +6,11 @@ return require('packer').startup(function(use)
   use('tpope/vim-fugitive')
   use('tpope/vim-surround')
   use('justinmk/vim-sneak')
-
   use('kyazdani42/nvim-web-devicons')
+  use('nordfjord/vim-test')
+  use('neovim/nvim-lspconfig')
 
-  use({ 'nordfjord/onehalf', rtp = 'vim/' })
-
-  use({
-    'nordfjord/vim-test',
-    config = function()
-      require('plugin.test')
-    end,
-  })
-
-  use({
-    'neovim/nvim-lspconfig',
-    config = function()
-      require('plugin.lsp')
-    end,
-  })
-
-  use({
-    'dcampos/nvim-snippy',
-    config = function()
-      require('plugin.snippy')
-    end,
-  })
+  use('dcampos/nvim-snippy')
 
   -- Completion backend
   use({
@@ -43,9 +23,6 @@ return require('packer').startup(function(use)
       { 'dcampos/cmp-snippy' },
       { 'onsails/lspkind-nvim' },
     },
-    config = function()
-      require('plugin.cmp')
-    end,
   })
 
   use({
@@ -56,41 +33,30 @@ return require('packer').startup(function(use)
       { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
       { 'nvim-telescope/telescope-file-browser.nvim' },
     },
-    config = function()
-      require('plugin.telescope')
-    end,
   })
 
   use('ionide/Ionide-vim')
 
-  use({
-    'mhartington/formatter.nvim',
-    config = function()
-      require('plugin.formatter')
-    end,
-  })
+  use('mhartington/formatter.nvim')
 
   use({
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
-    config = function()
-      require('plugin.treesitter')
-    end,
   })
 
   use('rescript-lang/vim-rescript')
 
-  vim.g['neo_tree_remove_legacy_commands'] = true
-  use({
-    'nvim-neo-tree/neo-tree.nvim',
-    branch = 'v2.x',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
-      'MunifTanjim/nui.nvim',
-    },
-    config = function()
-      require('plugin.neotree')
-    end,
-  })
+  -- vim.g['neo_tree_remove_legacy_commands'] = true
+  -- use({
+  --   'nvim-neo-tree/neo-tree.nvim',
+  --   branch = 'v2.x',
+  --   requires = {
+  --     'nvim-lua/plenary.nvim',
+  --     'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+  --     'MunifTanjim/nui.nvim',
+  --   },
+  --   config = function()
+  --     require('plugin.neotree')
+  --   end,
+  -- })
 end)

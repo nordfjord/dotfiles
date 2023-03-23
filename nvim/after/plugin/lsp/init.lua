@@ -7,11 +7,3 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagn
     prefix = '!',
   },
 })
-
-
-require('plugin.lsp.fsharp')
-require('plugin.lsp.lua')
-require('plugin.lsp.ocaml')
-require('plugin.lsp.python')
-require('plugin.lsp.rescript')
-require('plugin.lsp.typescript')

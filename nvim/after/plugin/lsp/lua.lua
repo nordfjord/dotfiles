@@ -1,7 +1,7 @@
 local lsp = require('lspconfig')
-local setup = require('plugin.lsp.setup')
+local setup = require('lsp-setup')
 
-setup(lsp.sumneko_lua, {
+setup(lsp.lua_ls, {
   settings = {
     Lua = {
       runtime = {
@@ -23,4 +23,3 @@ setup(lsp.sumneko_lua, {
     },
   },
 })
-

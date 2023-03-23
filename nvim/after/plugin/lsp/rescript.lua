@@ -1,5 +1,5 @@
 local lsp = require('lspconfig')
-local setup = require('plugin.lsp.setup')
+local setup = require('lsp-setup')
 
 
 local rescript_server_path = vim.fn.stdpath('data')..'/site/pack/packer/start/vim-rescript/server/out/server.js'

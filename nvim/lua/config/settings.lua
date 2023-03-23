@@ -2,7 +2,7 @@ local opt = vim.opt
 opt.title = true
 opt.smarttab = true
 opt.hidden = true
-opt.wrap = true
+opt.wrap = false
 opt.encoding = 'utf-8'
 opt.fileencoding = 'utf-8'
 opt.ruler = true
@@ -17,6 +17,7 @@ opt.smartindent = true
 opt.autoindent = true
 opt.laststatus = 2
 opt.number = true
+opt.relativenumber = true
 opt.cursorline = true
 opt.background = 'dark'
 opt.showtabline = 0
@@ -33,6 +34,9 @@ opt.splitright = true
 opt.hlsearch = true
 opt.incsearch = true
 opt.smartcase = true
+opt.termguicolors = true
+opt.scrolloff = 8
+opt.signcolumn = 'yes'
 
 opt.iskeyword = opt.iskeyword - '_'
 

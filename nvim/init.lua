@@ -8,6 +8,10 @@ require('plugins')
 require('config')
 require('keymap')
 
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
+
 
 vim.g['sneak#s_next'] = 1
 
