@@ -1,6 +1,4 @@
 local opt = vim.opt
-opt.ls = 3
-opt.ch = 0
 
 local modes = {
   ['n'] = 'NORMAL',
