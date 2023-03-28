@@ -32,7 +32,6 @@ lsp.setup_nvim_cmp({
 
 lsp.ensure_installed({ "tsserver" })
 
-
 lsp.configure("lua_ls", {
     settings = {
         Lua = {
