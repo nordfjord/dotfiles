@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.keymap.set('n', '<SPACE>', '<Nop>', { noremap = true })
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
