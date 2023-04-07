@@ -22,6 +22,8 @@ return require("packer").startup(function(use)
 
   use("adelarsq/neofsharp.vim")
 
+  use("github/copilot.vim")
+
   use({
     "VonHeikemen/lsp-zero.nvim",
     branch = "v1.x",
