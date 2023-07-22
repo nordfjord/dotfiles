@@ -19,10 +19,13 @@ return require("packer").startup(function(use)
   use("tpope/vim-surround")
   use("nordfjord/vim-test")
   use("theprimeagen/harpoon")
+  use("theprimeagen/vim-be-good")
 
   use("adelarsq/neofsharp.vim")
 
   use("github/copilot.vim")
+
+  use("rescript-lang/vim-rescript")
 
   use({
     "VonHeikemen/lsp-zero.nvim",
