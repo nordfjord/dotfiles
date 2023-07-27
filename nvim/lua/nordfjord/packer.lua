@@ -27,6 +27,8 @@ return require("packer").startup(function(use)
 
   use("rescript-lang/vim-rescript")
 
+  use("mhartington/formatter.nvim")
+
   use({
     "VonHeikemen/lsp-zero.nvim",
     branch = "v1.x",

@@ -21,7 +21,6 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww ~/.local/bin/tmux-sessionizer<CR>")
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 -- Keep visual selection after move
 vim.keymap.set("v", "<", "<gv", { noremap = true })
