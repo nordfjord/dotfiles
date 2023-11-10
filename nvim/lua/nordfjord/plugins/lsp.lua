@@ -47,7 +47,7 @@ return {
               defaultConfig = {
                 indent_style = "space",
                 indent_size = "2",
-                quote_style = "double"
+                quote_style = "double",
               }
             },
           },

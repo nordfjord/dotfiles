@@ -18,25 +18,33 @@ return {
       luasnip.config.setup {}
 
       local cmp_select = { behavior = cmp.SelectBehavior.Select }
-      cmp.setup {
+      cmp.setup({
+        preselect = cmp.PreselectMode.Item,
+        completion = {
+          completeopt = "menu,menuone,noinsert"
+        },
+        window = {
+          documentation = cmp.config.window.bordered(),
+        },
         snippet = {
           expand = function(args)
             luasnip.lsp_expand(args.body)
           end,
         },
-        mapping = cmp.mapping.preset.insert {
-          ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
-          ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
+        mapping = cmp.mapping.preset.insert({
+          ["<C-j>"] = cmp.mapping.select_next_item(cmp_select),
+          ["<C-k>"] = cmp.mapping.select_prev_item(cmp_select),
           ["<C-u>"] = cmp.mapping.scroll_docs(-4),
           ["<C-d>"] = cmp.mapping.scroll_docs(4),
-          ["<C-y>"] = cmp.mapping.confirm { select = true },
-          ["<C-Space>"] = cmp.mapping.complete(),
-        },
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        }),
         sources = cmp.config.sources {
           { name = "nvim_lsp" },
           { name = "luasnip" },
+          { name = "buffer" },
+          { name = "path" },
         },
-      }
+      })
     end,
   },
 }
