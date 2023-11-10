@@ -8,6 +8,8 @@ if status is-interactive
     abbr dc "docker-compose"
     abbr p "pnpm"
 
+    abbr gprv "gh pr view -w"
+
     alias vim "nvim"
     alias vi "nvim"
     alias v "nvim"

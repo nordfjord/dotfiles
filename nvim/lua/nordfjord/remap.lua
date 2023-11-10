@@ -26,18 +26,5 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww ~/.local/bin/tmux-sessioniz
 vim.keymap.set("v", "<", "<gv", { noremap = true })
 vim.keymap.set("v", ">", ">gv", { noremap = true })
 
--- Moving between splits
-vim.keymap.set("n", "<c-h>", "<c-w>h", { noremap = true })
-vim.keymap.set("n", "<c-j>", "<c-w>j", { noremap = true })
-vim.keymap.set("n", "<c-k>", "<c-w>k", { noremap = true })
-vim.keymap.set("n", "<c-l>", "<c-w>l", { noremap = true })
 
--- Sizing splits
-vim.keymap.set("n", "<leader>w=", "<c-w>=", { noremap = true })
-vim.keymap.set("n", "<leader>ws", "<c-w>|", { noremap = true })
 
--- Creating splits
-vim.keymap.set("n", "<leader>wv", "<c-w>v", { noremap = true })
-vim.keymap.set("n", "<leader>wV", "<c-w>v<c-w>w", { noremap = true })
-vim.keymap.set("n", "<leader>ws", "<c-w>s", { noremap = true })
-vim.keymap.set("n", "<leader>wS", "<c-w>s<c-w>w", { noremap = true })
