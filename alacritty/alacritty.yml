@@ -107,7 +107,7 @@ window:
 font:
   # Normal (roman) font face
   normal: 
-    family: JetBrainsMono Nerd Font
+    family: JetBrains Mono
     style: Light 
     # family: Victor Mono
     # style: Regular
