@@ -24,7 +24,7 @@ return {
           completeopt = "menu,menuone,noinsert"
         },
         window = {
-          documentation = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered({ max_width = 80 }),
         },
         snippet = {
           expand = function(args)

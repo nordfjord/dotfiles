@@ -11,6 +11,8 @@ return {
       javascript = { "eslint_d" },
     }
 
+    table.insert(lint.linters.eslint_d.args, "--no-warn-ignored")
+
     -- Lint buffers on write
     vim.api.nvim_create_autocmd({ "BufWritePost" }, {
       group = vim.api.nvim_create_augroup("LintOnWrite", {}),
