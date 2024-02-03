@@ -9,13 +9,18 @@ return {
       "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
       "rafamadriz/friendly-snippets",
+      "windwp/nvim-autopairs"
     },
     config = function(_, _)
+      local cmp_autopairs = require("nvim-autopairs.completion.cmp")
       local cmp = require "cmp"
       local luasnip = require "luasnip"
 
       require("luasnip.loaders.from_vscode").lazy_load()
       luasnip.config.setup {}
+
+      require("nvim-autopairs").setup()
+      cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
       local cmp_select = { behavior = cmp.SelectBehavior.Select }
       cmp.setup({

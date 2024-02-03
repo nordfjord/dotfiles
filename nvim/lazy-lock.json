@@ -14,6 +14,7 @@
   "neodev.nvim": { "branch": "main", "commit": "505860e0277611434f4e8d61d3c0d373045e57e1" },
   "neofsharp.vim": { "branch": "master", "commit": "f28bb9665fa859be8543b9828b477dd932743827" },
   "neovim": { "branch": "main", "commit": "ae445417f4fde24b24fd1224624f0bedab5ae304" },
+  "nvim-autopairs": { "branch": "master", "commit": "096d0baecc34f6c5d8a6dd25851e9d5ad338209b" },
   "nvim-cmp": { "branch": "main", "commit": "538e37ba87284942c1d76ed38dd497e54e65b891" },
   "nvim-lint": { "branch": "master", "commit": "6427b17058a74891bb287b275356bbc445b5924c" },
   "nvim-lspconfig": { "branch": "master", "commit": "7eed8b2150192e5ad05e1886fdf133493ddf2928" },

@@ -1,6 +1,8 @@
+-- Use space as leader key
 vim.g.mapleader = " "
 vim.keymap.set('n', '<SPACE>', '<Nop>', { noremap = true })
 
+-- Open file explorer
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -25,6 +27,4 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww ~/.local/bin/tmux-sessioniz
 -- Keep visual selection after move
 vim.keymap.set("v", "<", "<gv", { noremap = true })
 vim.keymap.set("v", ">", ">gv", { noremap = true })
-
-
 
