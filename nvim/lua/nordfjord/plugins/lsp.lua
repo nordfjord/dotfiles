@@ -69,6 +69,11 @@ return {
           }
         end,
       }
+
+      require("lspconfig").ocamllsp.setup {
+        capabilities = capabilities,
+        on_attach = remap.attach,
+      }
     end,
   },
 }
