@@ -31,6 +31,7 @@
 
     // Modules Right    
     "modules-right": [
+        "tray",
         "pulseaudio",
         // "bluetooth",
         "battery", 
@@ -38,9 +39,7 @@
         "group/hardware",
         "idle_inhibitor",
         "custom/exit",
-        "clock",
-        "tray",
-        "custom/ml4w-welcome"
+        "clock"
     ]
 }
 
