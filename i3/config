@@ -48,7 +48,9 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # utils
-bindsym Ctrl+Shift+4 exec flameshot gui
+bindsym Control+Shift+4 exec flameshot gui
+
+bindsym Control+space exec ~/.config/i3/switch-layout.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
