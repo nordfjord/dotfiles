@@ -14,6 +14,7 @@ return {
       vue = { prettier },
       json = { prettier },
       svelte = { prettier },
+      css = { prettier },
     }
 
     formatter.setup({
