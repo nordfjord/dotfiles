@@ -14,9 +14,7 @@ if status is-interactive
     alias vi "nvim"
     alias v "nvim"
     alias l "ls -algh"
-    alias pbcopy "wl-copy"
-    alias pbpaste "wl-paste"
-    
+
     starship init fish | source
     direnv hook fish | source
     bind \cf '~/.local/bin/tmux-sessionizer'
