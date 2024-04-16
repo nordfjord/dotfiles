@@ -584,6 +584,7 @@ require("lazy").setup({
 				-- You can use a sub-list to tell conform to run *until* a formatter
 				-- is found.
 				javascript = { { "prettierd", "prettier" } },
+				css = { { "prettierd", "prettier" } },
 				javascriptreact = { { "prettierd", "prettier" } },
 				typescript = { { "prettierd", "prettier" } },
 				typescriptreact = { { "prettierd", "prettier" } },
@@ -654,6 +655,7 @@ require("lazy").setup({
 				},
 				completion = { completeopt = "menu,menuone,noinsert" },
 
+				---@diagnostic disable-next-line: missing-fields
 				formatting = {
 					format = lspkind.cmp_format({
 						mode = "symbol",
