@@ -10,7 +10,7 @@ return {
 		config = function()
 			require("oil").setup()
 			vim.keymap.set("n", "<leader>pv", function()
-				require("oil").toggle_float()
+				require("oil").open()
 			end, { desc = "[P]roject [V]isual files" })
 		end,
 	},
@@ -121,6 +121,20 @@ return {
 			vim.keymap.set("n", "<C-S-N>", function()
 				harpoon:list():next()
 			end)
+		end,
+	},
+
+	{
+		"olexsmir/gopher.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		ft = "go",
+		config = function(_, opts)
+			require("gopher").setup(opts)
+			vim.keymap.set("n", "<leader>ctj", "<cmd>GoTagAdd json<CR>", { desc = "[Go] [struct] add [json] tags" })
+			vim.keymap.set("n", "<leader>cie", "<cmd>GoIfErr<CR>", { desc = "[C]ode add [if] [err]" })
+		end,
+		build = function()
+			vim.cmd([[silent! GoInstallDeps]])
 		end,
 	},
 }
