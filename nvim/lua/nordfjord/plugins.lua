@@ -1,4 +1,6 @@
 require("nordfjord.set")
+require("nordfjord.globals")
+
 local links = {
 	["@lsp.type.namespace.typescript"] = "@type",
 }
@@ -97,7 +99,7 @@ return {
 			vim.keymap.set("n", "<leader>a", function()
 				harpoon:list():add()
 			end)
-			vim.keymap.set("n", "<C-j>", function()
+			vim.keymap.set("n", "<C-s>", function()
 				harpoon.ui:toggle_quick_menu(harpoon:list())
 			end)
 
@@ -136,5 +138,23 @@ return {
 		build = function()
 			vim.cmd([[silent! GoInstallDeps]])
 		end,
+	},
+
+	{
+		-- uncomment when developing
+		-- dir = "/home/nordfjord/git/nordfjord/vim-postgres",
+		"nordfjord/vim-postgres",
+		config = function(_, opts)
+			require("postgres").setup(opts)
+			vim.keymap.set("v", "<leader>pge", function()
+				require("postgres").execute_visual()
+			end, { desc = "[P]ost[G]res [E]xecute" })
+			vim.keymap.set("n", "<leader>pge", function()
+				require("postgres").execute_current()
+			end, { desc = "[P]ost[G]res [E]xecute" })
+		end,
+		opts = {
+			env_var = "DATABASE_URL",
+		},
 	},
 }
