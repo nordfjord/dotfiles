@@ -157,4 +157,46 @@ return {
 			env_var = "DATABASE_URL",
 		},
 	},
+
+	{
+		"mfussenegger/nvim-dap",
+		init = function()
+			local dap = require("dap")
+			vim.keymap.set("n", "<leader>dus", function()
+				local widgets = require("dap.ui.widgets")
+				local sidebar = widgets.sidebar(widgets.scopes)
+				sidebar.open()
+			end, { desc = "[D]ebug [U]I [S]idebar" })
+			vim.keymap.set("n", "<leader>dsc", dap.continue, { desc = "[D]ebug [S]tep [C]ontinue" })
+			vim.keymap.set("n", "<leader>dss", dap.step_over, { desc = "[D]ebug [S]tep Over" })
+			vim.keymap.set("n", "<leader>dsi", dap.step_into, { desc = "[D]ebug [S]tep [I]nto" })
+			vim.keymap.set("n", "<leader>dso", dap.step_out, { desc = "[D]ebug [S]tep [O]ut" })
+			vim.keymap.set("n", "<Leader>db", dap.toggle_breakpoint, { desc = "[D]ebug [B]reakpoint" })
+			vim.keymap.set("n", "<Leader>dB", dap.set_breakpoint, { desc = "[D]ebug [B]reakpoint (set)" })
+			vim.keymap.set("n", "<leader>dr", dap.repl.open, { desc = "[D]ebug [R]epl" })
+			vim.keymap.set({ "n", "v" }, "<Leader>dh", function()
+				require("dap.ui.widgets").hover()
+			end, { desc = "[D]ebug [H]over" })
+			vim.keymap.set({ "n", "v" }, "<Leader>dp", function()
+				require("dap.ui.widgets").preview()
+			end, { desc = "[D]ebug [P]review" })
+		end,
+	},
+
+	{
+		"leoluz/nvim-dap-go",
+		dependencies = "mfussenegger/nvim-dap",
+		ft = "go",
+		config = function(_, opts)
+			local dap = require("dap-go")
+			dap.setup(opts)
+			vim.keymap.set("n", "<Leader>df", function()
+				local widgets = require("dap.ui.widgets")
+				widgets.centered_float(widgets.frames)
+			end)
+
+			vim.keymap.set("n", "<leader>dt", dap.debug_test, { desc = "[D]ebug [T]est" })
+			vim.keymap.set("n", "<leader>dlt", dap.debug_last, { desc = "[D]ebug [L]ast [T]est" })
+		end,
+	},
 }
