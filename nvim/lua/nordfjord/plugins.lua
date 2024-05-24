@@ -5,7 +5,16 @@ local links = {
 	["@lsp.type.namespace.typescript"] = "@type",
 }
 
+vim.g.table_mode_disable_mappings = true
+vim.g.table_mode_disable_tableize_mappings = true
+
 return {
+	{
+		"dhruvasagar/vim-table-mode",
+		config = function()
+			vim.keymap.set("n", "<leader>tm", vim.cmd.TableModeToggle)
+		end,
+	},
 	{
 		"stevearc/oil.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },

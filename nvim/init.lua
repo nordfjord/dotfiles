@@ -589,7 +589,7 @@ require("lazy").setup({
 				typescript = { { "prettierd", "prettier" } },
 				typescriptreact = { { "prettierd", "prettier" } },
 				yaml = { { "prettierd", "prettier" } },
-				sql = { "sql_formatter" },
+				-- sql = { "sql_formatter" },
 				terraform = { "terraform_fmt" },
 			},
 		},
