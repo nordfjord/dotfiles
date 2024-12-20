@@ -208,4 +208,6 @@ return {
 			vim.keymap.set("n", "<leader>dlt", dap.debug_last, { desc = "[D]ebug [L]ast [T]est" })
 		end,
 	},
+	{ "adelarsq/neofsharp.vim" },
+	{ "rescript-lang/vim-rescript", ft = "rescript" },
 }
