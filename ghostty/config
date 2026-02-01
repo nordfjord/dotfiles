@@ -1,0 +1,6 @@
+theme = dark:Rose Pine,light:Rose Pine Dawn
+font-size = 16
+font-family = JetBrains Mono
+window-inherit-font-size = false
+window-decoration = false
+

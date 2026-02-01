@@ -1,6 +1,3 @@
-require("nordfjord.set")
-require("nordfjord.globals")
-
 local links = {
 	["@lsp.type.namespace.typescript"] = "@type",
 }
@@ -9,20 +6,25 @@ vim.g.table_mode_disable_mappings = true
 vim.g.table_mode_disable_tableize_mappings = true
 
 return {
+	{ "numToStr/Comment.nvim", opts = {} },
+
+	{ -- Adds git related signs to the gutter, as well as utilities for managing changes
+		"lewis6991/gitsigns.nvim",
+		opts = {
+			signs = {
+				add = { text = "+" },
+				change = { text = "~" },
+				delete = { text = "_" },
+				topdelete = { text = "‾" },
+				changedelete = { text = "~" },
+			},
+		},
+	},
+
 	{
 		"dhruvasagar/vim-table-mode",
 		config = function()
 			vim.keymap.set("n", "<leader>tm", vim.cmd.TableModeToggle)
-		end,
-	},
-	{
-		"stevearc/oil.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		config = function()
-			require("oil").setup()
-			vim.keymap.set("n", "<leader>pv", function()
-				require("oil").open()
-			end, { desc = "[P]roject [V]isual files" })
 		end,
 	},
 
@@ -65,33 +67,20 @@ return {
 
 	{
 		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		build = ":Copilot auth",
-		opts = {
-			suggestion = { enabled = false },
-			panel = { enabled = false },
-		},
-	},
-
-	{
-		"zbirenbaum/copilot-cmp",
-		dependencies = { "copilot.lua", "hrsh7th/nvim-cmp" },
-		opts = {},
-	},
-
-	{
-		"windwp/nvim-autopairs",
-		dependencies = { "hrsh7th/nvim-cmp" },
 		config = function()
-			local npairs = require("nvim-autopairs")
-			local cmp = require("cmp")
-			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-
-			npairs.setup({})
-			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+			local copilot = require("copilot")
+			copilot.setup({
+				filetypes = {
+					typescript = true,
+					svelte = true,
+					javascript = true,
+				},
+				suggestion = {
+					auto_trigger = true,
+				},
+			})
 		end,
 	},
-
 	{
 		"tpope/vim-fugitive",
 		config = function()

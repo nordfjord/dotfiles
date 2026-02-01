@@ -7,6 +7,7 @@ if status is-interactive
     abbr keti "kubectl exec -it"
     abbr dc "docker-compose"
     abbr p "pnpm"
+    abbr bb "bunx"
 
     abbr gprv "gh pr view -w"
 
@@ -18,6 +19,11 @@ if status is-interactive
     starship init fish | source
     direnv hook fish | source
     bind \cf '~/.local/bin/tmux-sessionizer'
+    set -x EDITOR nvim
 end
 
 
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
