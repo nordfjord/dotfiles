@@ -1,0 +1,6 @@
+[Unit]
+Description=Cycle sway wallpaper
+
+[Service]
+Type=oneshot
+ExecStart=%h/git/nordfjord/dotfiles/bin/cycle-wallpaper

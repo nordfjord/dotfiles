@@ -1,0 +1,106 @@
+/* Rose Pine theme for Waybar */
+@define-color base #191724;
+@define-color surface #1f1d2e;
+@define-color overlay #26233a;
+@define-color muted #6e6a86;
+@define-color subtle #908caa;
+@define-color text #e0def4;
+@define-color love #eb6f92;
+@define-color gold #f6c177;
+@define-color rose #ebbcba;
+@define-color pine #31748f;
+@define-color foam #9ccfd8;
+@define-color iris #c4a7e7;
+@define-color highlightlow #21202e;
+@define-color highlightmed #403d52;
+@define-color highlighthigh #524f67;
+
+* {
+    font-family: JetBrains Mono, monospace;
+    font-size: 16px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: @base;
+    color: @text;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: @subtle;
+    background-color: transparent;
+}
+
+#workspaces button:hover {
+    background-color: @surface;
+    color: @text;
+}
+
+#workspaces button.focused {
+    background-color: @surface;
+    color: @rose;
+}
+
+#workspaces button.urgent {
+    background-color: @love;
+    color: @base;
+}
+
+#mode {
+    background-color: @love;
+    color: @base;
+    padding: 0 8px;
+}
+
+#window {
+    color: @text;
+}
+
+#clock,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray {
+    padding: 0 10px;
+    color: @text;
+}
+
+#cpu {
+    color: @foam;
+}
+
+#memory {
+    color: @iris;
+}
+
+#network {
+    color: @pine;
+}
+
+#network.disconnected {
+    color: @muted;
+}
+
+#pulseaudio {
+    color: @gold;
+}
+
+#pulseaudio.muted {
+    color: @muted;
+}
+
+#tray {
+    padding: 0 8px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    background-color: @love;
+}

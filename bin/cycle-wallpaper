@@ -1,0 +1,20 @@
+#!/bin/bash
+# Cycle wallpaper for sway
+
+WALLPAPER_DIR="$HOME/git/nordfjord/dotfiles/wallpapers"
+
+# Find SWAYSOCK if not set (needed for systemd/cron)
+if [ -z "$SWAYSOCK" ]; then
+    export SWAYSOCK=$(ls /run/user/$(id -u)/sway-ipc.*.sock 2>/dev/null | head -1)
+fi
+
+if [ -z "$SWAYSOCK" ]; then
+    echo "Error: Could not find sway socket" >&2
+    exit 1
+fi
+
+WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.JPG" \) | shuf -n 1)
+
+if [ -n "$WALLPAPER" ]; then
+    swaymsg "output * bg '$WALLPAPER' fill"
+fi

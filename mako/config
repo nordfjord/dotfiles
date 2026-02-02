@@ -1,0 +1,42 @@
+# Mako configuration - Rose Pine theme
+
+# Appearance
+font=JetBrains Mono 11
+background-color=#1f1d2e
+text-color=#e0def4
+border-color=#ebbcba
+border-size=2
+border-radius=8
+padding=12
+margin=8
+
+# Positioning
+anchor=top-right
+width=350
+max-visible=5
+
+# Behavior
+default-timeout=5000
+ignore-timeout=0
+max-history=50
+
+# Icons
+icons=1
+max-icon-size=48
+
+# Urgency styles
+[urgency=low]
+background-color=#1f1d2e
+text-color=#908caa
+border-color=#6e6a86
+
+[urgency=normal]
+background-color=#1f1d2e
+text-color=#e0def4
+border-color=#ebbcba
+
+[urgency=critical]
+background-color=#1f1d2e
+text-color=#e0def4
+border-color=#eb6f92
+default-timeout=0
