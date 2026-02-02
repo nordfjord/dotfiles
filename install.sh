@@ -108,11 +108,15 @@ main() {
         create_symlink "$DOTFILES_DIR/bin" "$BIN_DIR"
     fi
 
-    # Symlink systemd user services
+    # Symlink systemd user services (each file individually)
     if [[ -d "$DOTFILES_DIR/systemd/user" ]]; then
         info "Setting up systemd user services..."
-        mkdir -p "$CONFIG_DIR/systemd"
-        create_symlink "$DOTFILES_DIR/systemd/user" "$CONFIG_DIR/systemd/user"
+        mkdir -p "$CONFIG_DIR/systemd/user"
+        for service in "$DOTFILES_DIR/systemd/user"/*; do
+            if [[ -f "$service" ]]; then
+                create_symlink "$service" "$CONFIG_DIR/systemd/user/$(basename "$service")"
+            fi
+        done
         info "Run 'systemctl --user daemon-reload' to reload systemd user units"
     fi
 

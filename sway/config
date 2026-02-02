@@ -17,7 +17,7 @@ set $right l
 # Your preferred terminal emulator
 set $term ghostty
 # Your preferred application launcher
-set $menu wmenu-run
+set $menu j4-dmenu-desktop --dmenu='wmenu -i -f "JetBrains Mono 12"'
 
 ### Output configuration
 #
@@ -32,6 +32,13 @@ output * bg ~/git/nordfjord/dotfiles/wallpapers/Arch.png fill
 # output DP-3 resolution 5120x2880 position 0,0
 output DP-3 resolution 3840x2160 scale 1.5
 output DP-5 disable
+
+# The lg ultrafine 5K monitor requires 2 DP1.2 signals to work properly
+# Unfortunately, sway can't join the two signals together and as such each
+# half of the screen is considered its own workspace.
+# Waiting around for a fix
+# output DP-3 resolution 2560x2880 scale 2
+# output DP-5 resolution 2560x2880 scale 2
 
 ### Idle configuration
 #
@@ -149,7 +156,7 @@ exec autotiling -l 2
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
     bindsym $mod+b splith
-    bindsym $mod+v splitv
+    # bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking

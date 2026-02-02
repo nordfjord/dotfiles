@@ -4,3 +4,5 @@ font-family = JetBrains Mono
 window-inherit-font-size = false
 window-decoration = false
 
+keybind = super+c=copy_to_clipboard
+keybind = super+v=paste_from_clipboard
