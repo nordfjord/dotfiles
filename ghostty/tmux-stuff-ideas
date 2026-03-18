@@ -1,0 +1,18 @@
+_keybind = ctrl+a>left=goto_split:left
+_keybind = ctrl+a>down=goto_split:down
+_keybind = ctrl+a>up=goto_split:up
+_keybind = ctrl+a>right=goto_split:right
+
+_keybind = ctrl+a>h=goto_split:left
+_keybind = ctrl+a>j=goto_split:down
+_keybind = ctrl+a>k=goto_split:up
+_keybind = ctrl+a>l=goto_split:right
+
+_keybind = super+shift+c=copy_to_clipboard
+_keybind = super+shift+v=paste_from_clipboard
+
+_keybind = ctrl+a>w=new_tab
+_keybind = ctrl+a>/=new_split:right
+_keybind = ctrl+a>-=new_split:down
+_keybind = ctrl+a>z=toggle_split_zoom
+

@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+# Toggle wf-recorder screen recording
+# Saves to ~/Videos with timestamp and uses GPU encoding when available
+
+DATAFILE="/tmp/screen-recording.json"
+VIDEO_DIR="$HOME/Videos"
+mkdir -p "$VIDEO_DIR"
+
+# Check if recording is active
+WF_PID=$(pidof wf-recorder 2>/dev/null)
+
+if [ -n "$WF_PID" ]; then
+    # Recording is active, stop it
+    kill "$WF_PID"
+    sleep 0.5
+    
+    # Get output path from data file
+    OUTPUT_PATH=""
+    if [ -f "$DATAFILE" ]; then
+        OUTPUT_PATH=$(jq -r '.output' "$DATAFILE" 2>/dev/null)
+        rm "$DATAFILE"
+    fi
+    
+    if [ -n "$OUTPUT_PATH" ] && [ -f "$OUTPUT_PATH" ]; then
+        echo "file://$OUTPUT_PATH" | wl-copy -t text/uri-list
+        qs -c noctalia-shell ipc call toast send '{"title": "Recording stopped", "body": "Video saved to '"$OUTPUT_PATH"'", "icon": "player-stop", "duration": 3000}'
+    else
+        qs -c noctalia-shell ipc call toast send '{"title": "Recording stopped", "body": "Video saved to '"$VIDEO_DIR"'", "icon": "player-stop", "duration": 3000}'
+    fi
+else
+    # Start recording
+    OUTPUT="$VIDEO_DIR/Screen Recording $(date '+%Y-%m-%d %H:%M:%S').mp4"
+    
+    # Save output path to data file
+    echo '{"output": "'"$OUTPUT"'"}' > "$DATAFILE"
+    wf-recorder -f "$OUTPUT" &
+    
+    qs -c noctalia-shell ipc call toast send '{"title": "Recording", "body": "Started (mp4)", "icon": "player-record", "duration": 500}'
+fi

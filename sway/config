@@ -45,11 +45,12 @@ output DP-5 disable
 # Example configuration:
 #
 exec swayidle -w \
-          timeout 300 'swaylock -f -c 000000' \
-          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-          before-sleep 'swaylock -f -c 000000'
+  timeout 300 'qs -c noctalia-shell ipc call lockScreen lock' \
+  timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+  before-sleep 'qs -c noctalia-shell ipc call lockScreen lock'
 
 exec autotiling -l 2
+exec qs -c noctalia-shell
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -66,10 +67,11 @@ exec autotiling -l 2
 #       middle_emulation enabled
 #   }
 #
-#   input type:keyboard {
-#       xkb_layout "eu"
-#   }
-#
+input type:keyboard {
+    xkb_layout "us,is"
+    xkb_options "grp:win_space_toggle"
+}
+
 # You can also configure each device individually.
 # Read `man 5 sway-input` for more information about this section.
 
@@ -170,7 +172,7 @@ exec autotiling -l 2
     bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    bindsym $mod+Shift+f focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
@@ -186,6 +188,8 @@ exec autotiling -l 2
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
+
+bindsym $mod+Alt+l exec sh -c 'qs -c noctalia-shell ipc call lockScreen lock'
 #
 # Resizing containers:
 #
@@ -221,10 +225,12 @@ bindsym $mod+r mode "resize"
     # Special keys to adjust brightness via brightnessctl
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
-    # Special key to take a screenshot with grim
-    bindsym Print exec grim
+    # Special key to take a screenshot with grim (saves to file and copies to clipboard)
+    bindsym Print exec sh -c 'grim - | tee ~/Pictures/screenshot-$(date +%Y%m%d-%H%M%S).png | wl-copy --type image/png'
+    # Toggle screen recording with wf-recorder
+    bindsym Ctrl+Shift+5 exec ~/git/nordfjord/dotfiles/bin/toggle-record
     # Region screenshot
-    bindsym Ctrl+Shift+4 exec grim -g "$(slurp)"
+    bindsym Ctrl+Shift+4 exec sh -c 'grim -g "$(slurp)" - | tee ~/Pictures/screenshot-$(date +%Y%m%d-%H%M%S).png | wl-copy --type image/png'
 
 # Appearance
 font pango:JetBrains Mono 12
@@ -252,9 +258,9 @@ set $highlighthigh  #524f67
 #
 # Status Bar:
 #
-bar {
-    swaybar_command waybar
-}
+# bar {
+#     swaybar_command waybar
+# }
 
 
 # Teming border and Windows --------------
@@ -267,3 +273,6 @@ client.placeholder       $base     $base $text  $overlay   $overlay
 client.background        $base
 
 include /etc/sway/config.d/*
+
+include ~/.config/sway/noctalia
+

@@ -20,6 +20,7 @@ if status is-interactive
     direnv hook fish | source
     bind \cf '~/.local/bin/tmux-sessionizer'
     set -x EDITOR nvim
+    set -x SOPS_AGE_KEY_CMD "age-plugin-yubikey --identity"
 end
 
 
@@ -27,6 +28,3 @@ end
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
-
-# opencode
-fish_add_path /home/nordfjord/.opencode/bin

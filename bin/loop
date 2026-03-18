@@ -1,0 +1,52 @@
+#!/bin/bash
+
+# Usage: ralph/loop --max-iterations 5 -- opencode run "My prompt"
+#
+set -e
+
+MAX_ITERATIONS=10
+
+while [[ $# -gt 0 ]]; do
+    case $1 in
+      --max-iterations)
+        MAX_ITERATIONS="$2"
+        shift 2
+        ;;
+      --)
+        shift
+        break
+        ;;
+      *)
+        echo "Unknown argument: $1"
+        exit 1
+        ;;
+    esac
+done
+
+COMMAND=("$@")
+
+if [[ ${#COMMAND[@]} -eq 0 ]]; then
+    echo "No command provided"
+    exit 1
+fi
+
+echo "🚀 Starting Ralph"
+
+for i in $(seq 1 $MAX_ITERATIONS); do
+  echo "═══ Iteration $i ═══"
+  
+  OUTPUT=$("${COMMAND[@]}" 2>&1 \
+    | tee /dev/stderr) || true
+  
+  if echo "$OUTPUT" | \
+    grep -q "<promise>COMPLETE</promise>"
+  then
+    echo "✅ Done!"
+    exit 0
+  fi
+  
+  sleep 2
+done
+
+echo "⚠️ Max iterations reached"
+exit 1
