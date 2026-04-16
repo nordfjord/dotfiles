@@ -1,7 +1,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.g.have_nerd_font = true
 vim.o.number = true
+vim.o.relativenumber = true
+vim.o.syntax = "off"
 vim.o.mouse = "a"
 vim.o.showmode = false
 vim.o.breakindent = true
